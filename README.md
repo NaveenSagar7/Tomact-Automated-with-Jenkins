@@ -16,21 +16,6 @@ The WAR is deployed to a running Tomcat server on an EC2 instance.
 
 A health check confirms that deployment succeeded.
 
-🧩 Repository Structure
-Jenkins-Maestr y/
-│
-├── Jenkinsfile-setup3         # Jenkins pipeline definition for Setup-3
-├── java-webapp/
-│   ├── pom.xml                 # Maven build configuration
-│   └── src/
-│       └── main/
-│           ├── java/
-│           │   └── com/example/HelloServlet.java
-│           └── webapp/
-│               └── WEB-INF/web.xml
-└── README.md
-
-⚙️ Flow Description
 1️⃣ Developer Action
 
 Developer commits code changes to the GitHub repo.
@@ -90,23 +75,7 @@ curl -sf -m 2 http://<ec2-ip>:8080/gts9/
 
 If the app responds with HTTP 200, the build is marked as SUCCESS ✅.
 
-🧰 Jenkins Plugins Required
-Plugin Name	Plugin ID	Purpose
-Pipeline	workflow-aggregator	Enables Jenkinsfile-based pipelines
-Git	git	Integrates with Git repositories
-GitHub	github	Connects Jenkins to GitHub
-GitHub Branch Source	github-branch-source	Enables webhook-based builds
-Docker Pipeline	docker-workflow	Runs build steps inside containers (optional)
-SSH Agent	ssh-agent	Securely connects to remote EC2 via SSH key
-SonarQube Scanner for Jenkins	sonar	Integrates SonarQube analysis
-Credentials Binding	credentials-binding	Manages tokens and secrets
-AnsiColor	ansicolor	Adds colored output to console logs
-🧠 Why Maven?
-Without Maven	With Maven
-Developers manually compile .java and package .war each time.	Jenkins automates the entire process.
-Manual dependency management.	Maven handles dependencies via pom.xml.
-No standard structure or build consistency.	Enforced folder structure and reproducible builds.
-Error-prone local setups.	Unified, environment-independent build process.
+
 
 💡 In short:
 Maven automates building, testing, and packaging Java applications while ensuring consistency across environments.
@@ -137,7 +106,6 @@ withSonarQubeEnv('sonar') {
 }
 
 
-Optional webhook in SonarQube → http://<jenkins-url>/sonarqube-webhook/ for post-analysis updates.
 
 🔁 Webhook Configuration
 In GitHub
