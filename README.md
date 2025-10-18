@@ -1,7 +1,4 @@
-# Tomact-Automated
-This repository deomonstarted automated deployments on to tomcat instance via webhook settings and also building archive files of application code using maven and code analysis using sonarqube
-
-🚀 Setup-: Jenkins Automated WAR Build and Deployment to Tomcat
+🚀 Setup-3: Jenkins Automated WAR Build and Deployment to Tomcat
 📘 Overview
 
 This setup is designed to eliminate the need for developers to manually build .war files locally.
@@ -20,9 +17,9 @@ The WAR is deployed to a running Tomcat server on an EC2 instance.
 A health check confirms that deployment succeeded.
 
 🧩 Repository Structure
-Tomcat-Automation/
+Jenkins-Maestr y/
 │
-├── Jenkinsfile       # Jenkins pipeline definition for Setup-3
+├── Jenkinsfile-setup3         # Jenkins pipeline definition for Setup-3
 ├── java-webapp/
 │   ├── pom.xml                 # Maven build configuration
 │   └── src/
@@ -140,7 +137,7 @@ withSonarQubeEnv('sonar') {
 }
 
 
-
+Optional webhook in SonarQube → http://<jenkins-url>/sonarqube-webhook/ for post-analysis updates.
 
 🔁 Webhook Configuration
 In GitHub
