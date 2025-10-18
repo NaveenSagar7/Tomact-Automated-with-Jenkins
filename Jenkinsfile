@@ -1,5 +1,4 @@
-pi
-peline {
+pipeline {
   agent {
     docker {
       image 'ci-maven-ssh:11'     // built from the Dockerfile above
